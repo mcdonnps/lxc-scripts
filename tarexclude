@@ -1,0 +1,11 @@
+.bash_history
+lost+found
+/dev/*
+/mnt/*
+/tmp/*
+/proc/*
+/sys/*
+/root/clone
+/usr/src/*
+/lxc
+/cgroup

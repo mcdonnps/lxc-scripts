@@ -1,0 +1,11 @@
+# move this to /etc/sysconfig/lxc
+# /lxc = the root of our files
+LXC=/lxc
+# /lxc/etc = where container config files are stored
+ETC=$LXC/etc
+# where guest vm filesystem mounts should be located
+GUEST=$LXC/guest
+# where the "gold disk image" is stored when online, used by clone.sh
+BASE=$GUEST/base
+# what lvm volume group should we add new container filesystems to?
+GUESTVG=vg1
