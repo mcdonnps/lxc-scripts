@@ -83,7 +83,7 @@ echo "/sbin/route add default gw $GATEWAY" >> $ROOT/etc/rc.local
 
 echo "INFO: setting hostname"
 DOMAIN=`/bin/hostname --domain`
-sed -i -e "/^HOSTNAME=/s/^.*$/HOSTNAME=$CONTAINER.vm.$DOMAIN/" $ROOT/etc/sysconfig/network
+sed -i -e "/^HOSTNAME=/s/^.*$/HOSTNAME=$CONTAINER.$DOMAIN/" $ROOT/etc/sysconfig/network
 
 echo "INFO: configuring networking"
 rm -f $ROOT/etc/sysconfig/network-scripts/ifcfg-br* $ROOT/etc/sysconfig/network-scripts/ifcfg-eth* $ROOT/etc/sysconfig/network-scripts/route-*
