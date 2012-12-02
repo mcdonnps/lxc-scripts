@@ -7,11 +7,11 @@ These scripts assume you are using LXC in an LVM environment and are using Chef 
 
 Setup:
 
-% mkdir -p /lxc/{bin,etc}
+```% mkdir -p /lxc/{bin,etc}
 % cp {clone,create,destroy,start}.sh /lxc/bin
 % chmod 755 /lxc/bin/*.sh
 % cp lxc.sysconfig /etc/sysconfig/lxc
-% cp tarexclude /lxc/etc/
+% cp tarexclude /lxc/etc/```
 
 Configuration:
 
@@ -19,9 +19,9 @@ Modify the variables in /etc/sysconfig/lxc to taste.  /lxc/etc/tarexclude contai
 
 Usage:
 
-% /lxc/bin/clone.sh # Clones the root filesystem and creates a golden base volume in the specified LVM volume group
+```% /lxc/bin/clone.sh # Clones the root filesystem and creates a golden base volume in the specified LVM volume group
 % /lxc/bin/create.sh CONTAINER SIZE IPADDR PREFIX GATEWAY CHEFROLE CHEFUSER <VG> # Creates a new container from the golden volume in a new logical volume
 % /lxc/bin/destroy.sh CONTAINER # Destroys target container, logical volume, and removes from fstab
-% /lxc/bin/start.sh CONTAINER # Starts target container (wrapper around lxc-start)
+% /lxc/bin/start.sh CONTAINER # Starts target container (wrapper around lxc-start)```
 
 The creation process can be tedious if run by hand.  At Etsy, we have integrated create.sh into our internal VM creation portal.  You may want to place a similar wrapper around it.
